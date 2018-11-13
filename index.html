@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Chucky Jokes</title>
+    <link rel="shortcut icon" href="https://www.demilked.com/magazine/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-14.gif" />
+    <link href="./css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body class="grey lighten-2">
+    <div class="center-align" id="preloader"></div>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper purple lighten-1">
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="https://github.com/martinsOnuoha">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/victor-onuoha-martins/">LinkedIn</a></li>
+            <li><a href="https://medium.com/@martinsOnuoha">Medium</a>
+            </li>
+            <li><a href="https://medium.com/@martinsOnuoha">Original</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div id="container" class="container">     
+      <div class="row" id="render_here">
+        <div id="failure" class="col s12">
+          <h5 class="center-align">This isn't funny we know, but Something went wrong. :(</h5>
+        </div>
+      </div>
+    </div>
+
+    <script id="entry-template" type="text/x-handlebars-template">
+      {{#each jokes}}   
+        <div class="col m6 s12">
+          <div class="card white hoverable" id="joke{{ id }}">
+            <div class="card-content white-text">
+              <p class="flow-text">{{ joke }}</p>
+            </div>
+            <div class="card-action">
+              <button id="btn-{{ id }}" class="btn waves-effect waves-light purple lighten-1" onclick="lmfao(this.id)">LMFAO
+                <i class="material-icons right">star</i>
+              </button>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </script>
+
+    <div class="fixed-action-btn toolbar">
+      <a id="menu" class="btn-floating btn-large purple darken-2">
+        <i class="large material-icons">menu</i>
+      </a>
+      <ul>
+        <li class="waves-effect waves-light"><a href="#!" onclick="reloadJokes()"><i class="material-icons">autorenew</i></a></li>
+
+        <li class="waves-effect waves-light"><a class="modal-trigger" href="#!" data-target="closeModal"><i class="material-icons">power_settings_new</i></a></li>
+      </ul>
+    </div>
+
+      <!-- Tap Target Structure -->
+      <div class="tap-target" data-target="menu">
+        <div class="tap-target-content white-text">
+          <h5>Info</h5>
+          <p>Note, the "Chuck Norris" referred to here in reality is Jon Skeet ( The Chuck Norris of Programming ).<br> Use this menu to load more jokes or quit app.</p>
+        </div>
+      </div>
+      <!-- end Tap Target -->
+
+    <div id="closeModal" class="modal">
+      <div class="modal-content">
+        <h4>Sure?</h4>
+        <p>You're about to stop laughing...</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat left">Nah</a>
+        <a href="#!" onclick="window.close()" class="waves-effect waves-green btn-flat right">Yes, I've had enough</a>
+      </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.12/handlebars.min.js"></script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
