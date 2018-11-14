@@ -1,5 +1,2 @@
 # chuck-norris
-Random Chuck Norris Programming Jokes <br>
-Original Implementaion - https://github.com/remilekun-elijah/joke-app
-
-https://chuck-norris--mars.repl.co/
+Random Chuck Norris Programming Jokes - https://chuck-norris--mars.repl.co/
