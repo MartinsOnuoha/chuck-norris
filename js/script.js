@@ -6,7 +6,7 @@
   $('.fixed-action-btn').floatingActionButton({
     toolbarEnabled: true
   });
-  
+
   $(document).ready(function(){
     $('.modal').modal();
   });
@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
   showTip();
 });
 
-function getData() { 
+function getData() {
   fetch("https://api.icndb.com/jokes/random/10")
   .then(res => res.json()).then(data =>  {
-    
+
     if (data.type == "success") {
 
       let source = document.getElementById("entry-template").innerHTML;
@@ -28,8 +28,8 @@ function getData() {
 
       var context = {
         jokes: data.value
-      } 
-      
+      }
+
       let html = template(context);
       $('#render_here').html(html);
 
@@ -39,15 +39,16 @@ function getData() {
   });
 }
 
+function showTip() {
+  $('.tap-target').tapTarget();
+  $('.tap-target').tapTarget('open');
+}
+
 function reloadJokes() {
   getData();
   window.scrollTo(0, 0);
 }
 
-function showTip() {
-  $('.tap-target').tapTarget();
-  $('.tap-target').tapTarget('open');
-}
 
 function lmfao(_id) {
   // Cache awesome stuff here.
