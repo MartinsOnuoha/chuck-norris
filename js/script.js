@@ -49,7 +49,6 @@ function reloadJokes() {
   window.scrollTo(0, 0);
 }
 
-
 function lmfao(_id) {
   // Cache awesome stuff here.
   $(`#${_id}`).addClass('disabled');

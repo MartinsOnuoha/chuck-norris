@@ -27,15 +27,15 @@
     </div>
 
     <div id="container" class="container">
-      <div class="row" id="render_here">
-        <div id="failure" class="col s12">
-          <h5 class="center-align">This isn't funny we know, but Something went wrong. :(</h5>
+        <div class="row" id="render_here">
+            <div id="failure" class="col s12">
+                <h5 class="center-align">This isn't funny we know, but Something went wrong. :(</h5>
+            </div>
         </div>
-      </div>
     </div>
 
     <script id="entry-template" type="text/x-handlebars-template">
-      {{#each jokes}}
+      {{ #each jokes }}
         <div class="col m6 s12">
           <div class="card white hoverable" id="joke{{ id }}">
             <div class="card-content white-text">
@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-      {{/each}}
+      {{ /each }}
     </script>
 
     <div class="fixed-action-btn toolbar">
